@@ -166,7 +166,7 @@ def Blasczuk(e_mf, rho_g, U_mf, U_g, Ar, rho_p, h_gc, Visc_g, k_p,  K_g, cp_p, g
 lista_resultados = []
 
 # Condições operacionais
-# NF = 5  # Número de fluidização [-] #######
+NF = 5  # Número de fluidização [-] #######
 # U_g = 0.16 # Velocidade do gás de fluidização [m/s] #######
 mf = 0.01  # vazão mássica do ar frio [kg/s]
 Tf_e = 298.15  # Temperatura de entrada do fluido frio [K]
@@ -248,10 +248,10 @@ for Modelo in VetorModelo:
                           (1/2)) - 33.7) / (rho_g * D_p)
 
         # Cálculo da velocidade real dos fluidos e das vazões mássicas
-        U_excesso = 0.09 #######
-        U_g = U_mf + U_excesso #######
-        # U_g = U_mf * NF #######
-        NF = U_g/U_mf #######
+        # U_excesso = 0.09 #######
+        # U_g = U_mf + U_excesso #######
+        U_g = U_mf * NF #######
+        # NF = U_g/U_mf #######
         mq = rho_g * Ab * U_g
 
         # Número de Froude
