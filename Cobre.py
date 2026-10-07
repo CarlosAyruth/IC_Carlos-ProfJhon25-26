@@ -10,7 +10,7 @@ from scipy.optimize import newton
 # Configuração do dashboard
 st.set_page_config(page_title="Dashboard - Iniciação Científica 2025/2026", layout="wide")
 st.title("Comparação de Modelos Semi-empíricos para Estimativa do Rendimento Operacional de um Recuperador de Calor de Leito Fluidizado")
-st.markdown("Gráficos em função do diâmetro da partícula  \n Partícula: Aço Inoxidável 304")
+st.markdown("Gráficos em função do diâmetro da partícula  \n Partícula: Cobre")
 
 # Cálculo do fator de atrito
 def Colebrook(f, Re_i, Di):
@@ -413,7 +413,7 @@ df = pd.DataFrame(lista_resultados)
 # DEFINIÇÃO DE CADA GRÁFICO
 fig_e = px.line(
     df, x="Diâmetro da Partícula", y="Porosidade", color="Modelo",
-    title="Porosidade vs. Diâmetro da Partícula (Aço Inoxidável 304)",
+    title="Porosidade vs. Diâmetro da Partícula (Cobre)",
     labels={"Diâmetro da Partícula": "Diâmetro da Partícula [m]",
             "Porosidade": "Porosidade"},
     hover_data=["Efetividade", "Transferência de Calor Total [W]", "Regime", "Coeficiente Convectivo do Leito Fluidizado"]
@@ -423,7 +423,7 @@ fig_e.update_layout(hovermode="x unified")
 
 fig_U_mf = px.line(
     df, x="Diâmetro da Partícula", y="Velocidade Mínima de Fluidização", color="Modelo",
-    title="Velocidade Mínima de Fluidização vs. Diâmetro da Partícula (Aço Inoxidável 304)",
+    title="Velocidade Mínima de Fluidização vs. Diâmetro da Partícula (Cobre)",
     labels={"Diâmetro da Partícula": "Diâmetro da Partícula [m]",
             "Velocidade Mínima de Fluidização": "Velocidade Mínima de Fluidização [m/s]"},
     hover_data=["Efetividade", "Transferência de Calor Total [W]", "Regime", "Coeficiente Convectivo do Leito Fluidizado"]
@@ -432,7 +432,7 @@ fig_U_mf.update_layout(hovermode="x unified")
 
 fig_NUT = px.line(
     df, x="Diâmetro da Partícula", y="NUT", color="Modelo",
-    title="NUT vs. Diâmetro da Partícula (Aço Inoxidável 304)",
+    title="NUT vs. Diâmetro da Partícula (Cobre)",
     labels={"Diâmetro da Partícula": "Diâmetro da Partícula [m]",
             "NUT": "NUT"},
     hover_data=["Efetividade", "Transferência de Calor Total [W]", "Regime", "Coeficiente Convectivo do Leito Fluidizado"]
@@ -441,7 +441,7 @@ fig_NUT.update_layout(hovermode="x unified")
 
 fig_r_conv_int = px.line(
     df, x="Diâmetro da Partícula", y="Resistência Convecção Interna", color="Modelo",
-    title="Resistência Convecção Interna vs. Diâmetro da Partícula (Aço Inoxidável 304)",
+    title="Resistência Convecção Interna vs. Diâmetro da Partícula (Cobre)",
     labels={"Diâmetro da Partícula": "Diâmetro da Partícula [m]",
             "Resistência Convecção Interna": "Resistência Convecção Interna [K/W]"},
     hover_data=["Efetividade", "Transferência de Calor Total [W]", "Regime", "Coeficiente Convectivo do Leito Fluidizado"]
@@ -451,7 +451,7 @@ fig_r_conv_int.update_layout(hovermode="x unified")
 
 fig_r_cond = px.line(
     df, x="Diâmetro da Partícula", y="Resistência Condução", color="Modelo",
-    title="Resistência Condução vs. Diâmetro da Partícula (Aço Inoxidável 304)",
+    title="Resistência Condução vs. Diâmetro da Partícula (Cobre)",
     labels={"Diâmetro da Partícula": "Diâmetro da Partícula [m]",
             "Resistência Condução": "Resistência Condução [K/W]"},
     hover_data=["Efetividade", "Transferência de Calor Total [W]", "Regime", "Coeficiente Convectivo do Leito Fluidizado"]
@@ -461,7 +461,7 @@ fig_r_cond.update_layout(hovermode="x unified")
 
 fig_r_conv_ext = px.line(
     df, x="Diâmetro da Partícula", y="Resistência Convecção Externa", color="Modelo",
-    title="Resistência Convecção Externa vs. Diâmetro da Partícula (Aço Inoxidável 304)",
+    title="Resistência Convecção Externa vs. Diâmetro da Partícula (Cobre)",
     labels={"Diâmetro da Partícula": "Diâmetro da Partícula [m]",
             "Resistência Convecção Externa": "Resistência Convecção Externa [K/W]"},
     hover_data=["Efetividade", "Transferência de Calor Total [W]", "Regime", "Coeficiente Convectivo do Leito Fluidizado"]
@@ -470,7 +470,7 @@ fig_r_conv_ext.update_layout(hovermode="x unified")
 
 fig_r_total = px.line(
     df, x="Diâmetro da Partícula", y="Resistência Total", color="Modelo",
-    title="Resistência Total vs. Diâmetro da Partícula (Aço Inoxidável 304)",
+    title="Resistência Total vs. Diâmetro da Partícula (Cobre)",
     labels={
         "Diâmetro da Partícula": "Diâmetro da Partícula [m]", "Resistência Total": "Resistência Total [K/W]"},
     hover_data=["Efetividade", "Transferência de Calor Total [W]", "Regime", "Coeficiente Convectivo do Leito Fluidizado"]
@@ -479,7 +479,7 @@ fig_r_total.update_layout(hovermode="x unified")
 
 fig_q = px.line(
     df, x="Diâmetro da Partícula", y="Transferência de Calor Total [W]", color="Modelo",
-    title="Transferência de Calor Total vs. Diâmetro da Partícula (Aço Inoxidável 304)",
+    title="Transferência de Calor Total vs. Diâmetro da Partícula (Cobre)",
     labels={"Diâmetro da Partícula": "Diâmetro da Partícula [m]",
             "Transferência de Calor Total [W]": "Transferência de calor total [W]"},
     hover_data=["Efetividade", "Transferência de Calor Total [W]", "Regime", "Coeficiente Convectivo do Leito Fluidizado"]
@@ -488,7 +488,7 @@ fig_q.update_layout(hovermode="x unified")
 
 fig_efetividade = px.line(
     df, x="Diâmetro da Partícula", y="Efetividade", color="Modelo",
-    title="Efetividade vs. Diâmetro da Partícula (Aço Inoxidável 304)",
+    title="Efetividade vs. Diâmetro da Partícula (Cobre)",
     labels={
         "Diâmetro da Partícula": "Diâmetro da Partícula [m]", "Efetividade": "Efetividade"},
     hover_data=["Efetividade", "Transferência de Calor Total [W]", "Regime", "Coeficiente Convectivo do Leito Fluidizado"]
@@ -497,7 +497,7 @@ fig_efetividade.update_layout(hovermode="x unified")
 
 fig_h_leito = px.line(
     df, x="Diâmetro da Partícula", y="Coeficiente Convectivo do Leito Fluidizado", color="Modelo",
-    title="Coeficiente Convectivo do Leito Fluidizado vs. Diâmetro da Partícula (Aço Inoxidável 304)",
+    title="Coeficiente Convectivo do Leito Fluidizado vs. Diâmetro da Partícula (Cobre)",
     labels={"Diâmetro da Partícula": "Diâmetro da Partícula [m]",
             "Coeficiente Convectivo do Leito Fluidizado": "Coeficiente Convectivo do Leito [W/m²·K]"},
     hover_data=["Efetividade", "Transferência de Calor Total [W]", "Regime", "Coeficiente Convectivo do Leito Fluidizado"]
@@ -506,7 +506,7 @@ fig_h_leito.update_layout(hovermode="x unified")
 
 fig_U_g = px.line(
     df, x="Diâmetro da Partícula", y="Velocidade Externa", color="Modelo",
-    title="Velocidade Externa vs. Diâmetro da Partícula (Aço Inoxidável 304)",
+    title="Velocidade Externa vs. Diâmetro da Partícula (Cobre)",
     labels={"Diâmetro da Partícula": "Diâmetro da Partícula [m]",
             "Velocidade Externa": "Velocidade Externa [m/s]"},
     hover_data=["Efetividade", "Transferência de Calor Total [W]", "Regime", "Coeficiente Convectivo do Leito Fluidizado"]
@@ -515,7 +515,7 @@ fig_U_g.update_layout(hovermode="x unified")
 
 fig_r_contri_int = px.line(
     df, x="Diâmetro da Partícula", y="Contribuição Resistência Interna", color="Modelo",
-    title="Contribuição Resistência Interna vs. Diâmetro da Partícula (Aço Inoxidável 304)",
+    title="Contribuição Resistência Interna vs. Diâmetro da Partícula (Cobre)",
     labels={"Diâmetro da Partícula": "Diâmetro da Partícula [m]",
             "Contribuição Resistência Interna": "Contribuição Resistência Interna [%]"},
     hover_data=["Efetividade", "Transferência de Calor Total [W]", "Regime", "Coeficiente Convectivo do Leito Fluidizado"]
@@ -524,7 +524,7 @@ fig_r_contri_int.update_layout(hovermode="x unified")
 
 fig_r_contri_cond = px.line(
     df, x="Diâmetro da Partícula", y="Contribuição Resistência Condução", color="Modelo",
-    title="Contribuição Resistência Condução vs. Diâmetro da Partícula (Aço Inoxidável 304)",
+    title="Contribuição Resistência Condução vs. Diâmetro da Partícula (Cobre)",
     labels={"Diâmetro da Partícula": "Diâmetro da Partícula [m]",
             "Contribuição Resistência Condução": "Contribuição Resistência Condução [%]"},
     hover_data=["Efetividade", "Transferência de Calor Total [W]", "Regime", "Coeficiente Convectivo do Leito Fluidizado"]
@@ -533,7 +533,7 @@ fig_r_contri_cond.update_layout(hovermode="x unified")
 
 fig_r_contri_ext = px.line(
     df, x="Diâmetro da Partícula", y="Contribuição Resistência Externa", color="Modelo",
-    title="Contribuição Resistência Externa vs. Diâmetro da Partícula (Aço Inoxidável 304)",
+    title="Contribuição Resistência Externa vs. Diâmetro da Partícula (Cobre)",
     labels={"Diâmetro da Partícula": "Diâmetro da Partícula [m]",
             "Contribuição Resistência Externa": "Contribuição Resistência Externa [%]"},
     hover_data=["Efetividade", "Transferência de Calor Total [W]", "Regime", "Coeficiente Convectivo do Leito Fluidizado"]
@@ -542,7 +542,7 @@ fig_r_contri_ext.update_layout(hovermode="x unified")
 
 fig_NF = px.line(
     df, x="Diâmetro da Partícula", y="Número de Fluidização", color="Modelo",
-    title="Número de Fluidização vs. Diâmetro da Partícula (Aço Inoxidável 304)",
+    title="Número de Fluidização vs. Diâmetro da Partícula (Cobre)",
     labels={"Diâmetro da Partícula": "Diâmetro da Partícula [m]",
             "Número de Fluidização": "Número de Fluidização"},
     hover_data=["Efetividade", "Transferência de Calor Total [W]", "Regime", "Coeficiente Convectivo do Leito Fluidizado"]
@@ -551,7 +551,7 @@ fig_NF.update_layout(hovermode="x unified")
 
 fig_q_max = px.line(
     df, x="Diâmetro da Partícula", y="Transferência de Calor Máxima", color="Modelo",
-    title="Transferência de Calor Máxima vs. Diâmetro da Partícula (Aço Inoxidável 304)",
+    title="Transferência de Calor Máxima vs. Diâmetro da Partícula (Cobre)",
     labels={"Diâmetro da Partícula": "Diâmetro da Partícula [m]",
             "Transferência de Calor Máxima": "Transferência de Calor Máxima [W]"},
     hover_data=["Efetividade", "Transferência de Calor Total [W]", "Regime", "Coeficiente Convectivo do Leito Fluidizado"]
