@@ -1,3 +1,5 @@
+# Streamlit para abrir um dashboard interativo: Usar comando no terminal de python -m streamlit run Aco304.py
+
 import plotly.express as px
 import numpy as np
 import math
@@ -248,8 +250,6 @@ for Modelo in VetorModelo:
                           (1/2)) - 33.7) / (rho_g * D_p)
 
         # Cálculo da velocidade real dos fluidos e das vazões mássicas
-        # U_excesso = 0.09 #######
-        # U_g = U_mf + U_excesso #######
         U_g = U_mf * NF #######
         # NF = U_g/U_mf #######
         mq = rho_g * Ab * U_g
